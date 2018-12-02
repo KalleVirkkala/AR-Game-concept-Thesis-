@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23842153936343400}
   - component: {fileID: 114843359903189922}
   - component: {fileID: 64887463567631474}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VisualTrackedPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

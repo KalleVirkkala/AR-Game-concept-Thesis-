@@ -6,7 +6,7 @@ public class enemyMovement : MonoBehaviour
 {
 
     gameController gameControl;
-    Transform Toster;
+    Transform Coaster;
     public float movespeed;
     bool dead;
 
@@ -16,7 +16,7 @@ public class enemyMovement : MonoBehaviour
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         gameControl = gameControllerObject.GetComponent<gameController>();
-        Toster = GameObject.FindGameObjectWithTag("Toster").transform;
+        Coaster = GameObject.FindGameObjectWithTag("Coaster").transform;
 
     }
 
@@ -26,8 +26,8 @@ public class enemyMovement : MonoBehaviour
 
         if (!dead)
         {
-            transform.LookAt(Toster);
-            transform.position = Vector3.MoveTowards(transform.position, Toster.position, movespeed * Time.deltaTime);
+            transform.LookAt(Coaster);
+            transform.position = Vector3.MoveTowards(transform.position, Coaster.position, movespeed * Time.deltaTime);
 
         }
 
@@ -46,7 +46,7 @@ public class enemyMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Toster")
+        if (other.gameObject.tag == "Coaster")
         {
             gameControl.TakeDamage(1);
             death();

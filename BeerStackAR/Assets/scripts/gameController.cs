@@ -10,8 +10,6 @@ public class gameController : MonoBehaviour {
     public Text ScoreBox;
     public GameObject Can;
     public GameObject Enemy;
-    public GameObject spawnPlace;
-    public Transform[] EnemySpawn;
     private RaycastHit hit;
     public bool gamesceneSet;
     public Image dmgImage;
@@ -19,10 +17,11 @@ public class gameController : MonoBehaviour {
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public int startHealth = 3;
     public int curHealth;
+    public Vector3 size;
     bool damaged;
     public bool GameOver = false;
     public GameObject GameOverPanel;
-    AudioClip goSound;
+    Vector3 Coaster;
 
     // Use this for initialization
     void Start () {
@@ -35,7 +34,7 @@ public class gameController : MonoBehaviour {
         curHealth = startHealth;
     
        InvokeRepeating("spawnEnemy", 8f, 6f);
-
+         Coaster = GameObject.FindGameObjectWithTag("Toster").transform.position;
     }
 	
 	// Update is called once per frame
@@ -58,9 +57,8 @@ public class gameController : MonoBehaviour {
 
         if (GameOver)
         {
-            GameOverPanel.gameObject.SetActive(true);
-         gameObject.GetComponent<AudioSource>().PlayOneShot(goSound);
-
+         GameOverPanel.gameObject.SetActive(true);
+        
         }
 
 
@@ -73,6 +71,12 @@ public class gameController : MonoBehaviour {
         
 
     }
+    public void GameSceneSet( bool set)
+    {
+        gamesceneSet = set;
+
+    }
+
 
     public void RestartGame()
     {
@@ -96,29 +100,34 @@ public class gameController : MonoBehaviour {
 
         if (curHealth == 0)
         {
-           
+            gameObject.GetComponent<AudioSource>().Play();
             GameOver = true;
         }
     }
 
 
-    void spawnEnemy() {
+    void spawnEnemy()
+    {
 
-        if(gamesceneSet) { 
 
-        int spawnPointIndex = Random.Range(0, EnemySpawn.Length);
+        float Randx = Random.Range(-size.x, size.x);
+        float Randy = Random.Range(-size.z, size.z);
 
-        Instantiate(Enemy, EnemySpawn[spawnPointIndex].position, Quaternion.identity);
-}
-        
+        if (gamesceneSet)
+        {
 
+            Vector3 spawnPoint = Coaster + new Vector3(Randx, -0.5f, Randy);
+
+            Instantiate(Enemy, spawnPoint, Quaternion.identity);
+
+
+        }
     }
-
-    public void spawnNewCan()
+    public void SpawnNewCan()
     {
        
-        float Randx = Random.Range(-0.5f, 0.5f);
-        float Randy = Random.Range(-0.5f, 0.5f);
+        float Randx = Random.Range(-1f, 1f);
+        float Randy = Random.Range(-1f, 1f);
         Vector3 spawnPoint = new Vector3(Randx, -0.5f, Randy);
         var can = Instantiate(Can, spawnPoint, Quaternion.identity);
        

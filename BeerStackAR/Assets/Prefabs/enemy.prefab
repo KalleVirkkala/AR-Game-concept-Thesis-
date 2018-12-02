@@ -264,7 +264,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!64 &64153257618206332
 MeshCollider:
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d1b45af14fec240ad458a023ba725f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 0.06
+  movespeed: 0.05
 --- !u!137 &137900615802009654
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

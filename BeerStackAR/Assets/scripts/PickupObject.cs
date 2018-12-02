@@ -102,7 +102,7 @@ public class PickupObject : MonoBehaviour
             carriedObject = null;
             carrying = false;
 
-            gameController.spawnNewCan();
+            gameController.SpawnNewCan();
         }
     }
 

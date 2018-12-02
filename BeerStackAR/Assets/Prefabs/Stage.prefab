@@ -99,8 +99,8 @@ GameObject:
   - component: {fileID: 54998149228120580}
   - component: {fileID: 64137893261129880}
   m_Layer: 0
-  m_Name: CorkToster
-  m_TagString: Toster
+  m_Name: CorkCoaster
+  m_TagString: Coaster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

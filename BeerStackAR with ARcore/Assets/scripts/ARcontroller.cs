@@ -106,27 +106,31 @@ namespace GoogleARCore.Examples.HelloAR
                     Vector3.Dot(FirstPersonCamera.transform.position - hit.Pose.position,
                         hit.Pose.rotation * Vector3.up) < 0)
                 {
-                    Debug.Log("Hit at back of the current DetectedPlane");
+                  
                 }
                 else
                 {
-                   
+                   // ange spelobjektet prefab till spelplanets prefab
                     GameObject prefab = PlaceGameScenePrefab;;
+                  
+                        // Placera spelplan var användaren rör på planet, gör detta endast en gång
+                        if (!isSpawned)
+                        {
+                            // meddella spelkontrollen att spel planet har placerats för att initiera att splet har börjat
+                            gamecontroller.gamesceneSet = true;
 
+                            // initiera spel planet 
+                            var GamePlane = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
 
-                    // Placera spel plan var användaren rör på planet
-                    if (!isSpawned)
-                    {
-                        gamecontroller.gamesceneSet = true;
-
-                        var GamePlane = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
-
-                        var anchor = hit.Trackable.CreateAnchor(hit.Pose);
-
-                        GamePlane.transform.parent = anchor.transform;
+                            // placera en ankare på platsen som spelaren rört
+                            var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+                            // placera spelplanet på ankaret
+                            GamePlane.transform.parent = anchor.transform;
+                        
                         isSpawned = true;
+                        
                     }
-                }
+                    }
             }
         }
 

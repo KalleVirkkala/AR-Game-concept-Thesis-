@@ -173,7 +173,7 @@ MonoBehaviour:
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -363,7 +363,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -7}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!111 &569543962
 Animation:
@@ -643,11 +643,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4245071727496670, guid: d75c14f838426b64b980bc5e57bc138a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.049
+      value: 0.04901123
       objectReference: {fileID: 0}
     - target: {fileID: 4245071727496670, guid: d75c14f838426b64b980bc5e57bc138a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.10700212
+      value: -0.10699463
       objectReference: {fileID: 0}
     - target: {fileID: 4245071727496670, guid: d75c14f838426b64b980bc5e57bc138a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -676,6 +676,23 @@ Prefab:
     - target: {fileID: 4245071727496670, guid: d75c14f838426b64b980bc5e57bc138a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -2.917
+      objectReference: {fileID: 0}
+    - target: {fileID: 64581251527617388, guid: d75c14f838426b64b980bc5e57bc138a,
+        type: 2}
+      propertyPath: m_CookingOptions
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245071727496670, guid: d75c14f838426b64b980bc5e57bc138a, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245071727496670, guid: d75c14f838426b64b980bc5e57bc138a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245071727496670, guid: d75c14f838426b64b980bc5e57bc138a, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75c14f838426b64b980bc5e57bc138a, type: 2}
@@ -714,7 +731,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 800, y: 500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1104125359
 MonoBehaviour:
@@ -735,10 +752,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '1. Move the phone around to find planes
+  m_text: 'CONTROLS:
+
+    1. Move the phone around to find surface to play on
 
 
-    2. Place gamescene by tapping on ground
+    2. Place game by tapping on found surface
 
 
     3. Pick up button let''s you pick upp cans  by aiming the crosshair         <--
@@ -751,23 +770,23 @@ MonoBehaviour:
     4.The throw button throws crumpled cans at the crosshairs position
 
 
-    5.reset stage button let''s you place the game stage again if needed.
+    HOW TO PLAY:
+
+    Try to stack as many cans as you can on the COASTER to collect points.
 
 
-    Try to stack as many cans as you can!
+    Every time you place a can on the COSTER or stack CANS a new CAN will spawn at
+    random location around the COSTER, so look around !
 
 
-    Cans will spawn at random location around you so look around!
+    Kill of Can Monsters by throwing crumpled cans at them!
 
 
-    Kill of Can Monsters by throwuing crumplewd cans at them!
-
-
-    Don''t let the Can Monsters TOUCH YOUR Toster or your stack of cans will fall
+    Don''t let the Can Monsters TOUCH YOUR Coaster or your stack of cans will fall
     !!
 
 
-    If 3 monsters Get to your Toster it''s Game over !'
+    If 3  can-monsters gets to your COASTER it''s Game over !'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -794,14 +813,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 34.85
+  m_fontSizeBase: 0
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 288
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -812,7 +831,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 172
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -832,15 +851,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -58.542233, w: -662.10095}
   m_textInfo:
     textComponent: {fileID: 1104125359}
-    characterCount: 649
+    characterCount: 724
     spriteCount: 0
-    spaceCount: 139
-    wordCount: 120
+    spaceCount: 157
+    wordCount: 136
     linkCount: 0
-    lineCount: 27
+    lineCount: 29
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -963,11 +982,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4574068167776164, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.25910673
+      value: 0.25906372
       objectReference: {fileID: 0}
     - target: {fileID: 4574068167776164, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.059595205
+      value: -0.059570312
       objectReference: {fileID: 0}
     - target: {fileID: 4574068167776164, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1005,8 +1024,28 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 4.6860003
       objectReference: {fileID: 0}
+    - target: {fileID: 64341590661828904, guid: 68cae4a78f9bf7d47b004ec502cd594b,
+        type: 2}
+      propertyPath: m_CookingOptions
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574068167776164, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.02000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574068167776164, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.019999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574068167776164, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.02000004
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114884220645618878, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
+    - {fileID: 82769965477024112, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
+    - {fileID: 199303130601457270, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
+    - {fileID: 198775746869079674, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 68cae4a78f9bf7d47b004ec502cd594b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1611949256
@@ -1056,9 +1095,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 113.8
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 0.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1129,15 +1168,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4168431386452924, guid: 6cc5a7509012dbd459d0fb20607f3e43, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.116
+      value: 0.115997314
       objectReference: {fileID: 0}
     - target: {fileID: 4168431386452924, guid: 6cc5a7509012dbd459d0fb20607f3e43, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.036
+      value: 0.036010742
       objectReference: {fileID: 0}
     - target: {fileID: 4168431386452924, guid: 6cc5a7509012dbd459d0fb20607f3e43, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.472
+      value: -0.47200003
       objectReference: {fileID: 0}
     - target: {fileID: 4168431386452924, guid: 6cc5a7509012dbd459d0fb20607f3e43, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1170,6 +1209,18 @@ Prefab:
     - target: {fileID: 4168431386452924, guid: 6cc5a7509012dbd459d0fb20607f3e43, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -24.448002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168431386452924, guid: 6cc5a7509012dbd459d0fb20607f3e43, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168431386452924, guid: 6cc5a7509012dbd459d0fb20607f3e43, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168431386452924, guid: 6cc5a7509012dbd459d0fb20607f3e43, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114820157391015592, guid: 6cc5a7509012dbd459d0fb20607f3e43, type: 2}
@@ -1212,7 +1263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -59, y: -37}
+  m_AnchoredPosition: {x: 315.3, y: 94}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936258089
@@ -1383,7 +1434,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

@@ -50,10 +50,10 @@ public class Pickupable : MonoBehaviour
         {
 
 
-            if (other.gameObject.tag == "Can")
+            if (other.gameObject.tag == "Can" || other.gameObject.tag == "Coaster")
             {
                 Debug.Log("!!");
-
+                scoreControll.SpawnNewCan();
                 scoreControll.AddScore(scoreValue);
                 hasScored = true;
 

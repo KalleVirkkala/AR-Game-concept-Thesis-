@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class enemyMovement : MonoBehaviour {
 
-    gameController scoreControll;
-    Transform Toster;
-    int scoreValue = 2;
+    gameController gameControl;
+    Transform Coaster;
     public float movespeed;
     bool dead;
 
@@ -14,10 +13,8 @@ public class enemyMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
-        scoreControll = gameControllerObject.GetComponent<gameController>();
-        Toster = GameObject.FindGameObjectWithTag("Toster").transform;
-
-
+        gameControl = gameControllerObject.GetComponent<gameController>();
+        Coaster = GameObject.FindGameObjectWithTag("Coaster").transform;
 
     }
 	
@@ -25,13 +22,10 @@ public class enemyMovement : MonoBehaviour {
 	void Update () {
 
         if (!dead) { 
-        transform.LookAt(Toster);
-        transform.position = Vector3.MoveTowards(transform.position, Toster.position, movespeed * Time.deltaTime);
+        transform.LookAt(Coaster);
+        transform.position = Vector3.MoveTowards(transform.position, Coaster.position, movespeed * Time.deltaTime);
 
         }
-
-
-
 
     }
 
@@ -43,18 +37,14 @@ public class enemyMovement : MonoBehaviour {
             gameObject.GetComponent<ParticleSystem>().Play();
              gameObject.GetComponent<AudioSource>().Play(0);
             Destroy(gameObject,1);
-
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
 
-           if(other.gameObject.tag == "Toster")
-        { 
-        
-            scoreControll.TakeDamage(1);
+           if(other.gameObject.tag == "Coaster")
+        {
+            gameControl.TakeDamage(1);
             death();
         }
           

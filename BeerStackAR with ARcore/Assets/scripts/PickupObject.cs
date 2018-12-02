@@ -9,19 +9,13 @@ public class PickupObject : MonoBehaviour
     GameObject carriedObject;
     public float distance;
     public float smooth;
-    // Use this for initialization
  
     gameController gameController;
-
-
 
     void Start()
     {
         mainCamera = GameObject.FindWithTag("MainCamera");
        
-
-
-        // GetComponent<AudioSource>().loop = true;
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         if (gameControllerObject != null)
         {
@@ -31,43 +25,26 @@ public class PickupObject : MonoBehaviour
         {
             Debug.Log("Cannot find 'GameController' script");
         }
-
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (carrying) { 
+        if (carrying)
+        { 
         carry(carriedObject);
         }
-
     }
-
-    void rotateObject()
+    void carry(GameObject carry)
     {
-        carriedObject.transform.Rotate(5, 10, 15);
-    }
-
-   void carry(GameObject carry)
-    {
-
         carry.transform.position = Vector3.Lerp(carry.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
-
     }
 
     public void pickup()
     {
-       
-
-           
-
             int x = Screen.width / 2;
             int y = Screen.height / 2;
-
             Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
             RaycastHit hit;
-          
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log("hit");
@@ -83,12 +60,7 @@ public class PickupObject : MonoBehaviour
                     p.gameObject.GetComponent<AudioSource>().Play(0);
                 }
             }
-       
-
     }
-
-
-
 
    public void dropObject()
     {
@@ -100,11 +72,9 @@ public class PickupObject : MonoBehaviour
         carriedObject = null;
         carrying = false;
         
-        gameController.spawnNewCan();
+       
         }
     }
-
-
 
 
 }

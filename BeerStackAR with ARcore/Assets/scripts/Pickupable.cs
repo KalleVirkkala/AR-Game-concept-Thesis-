@@ -7,11 +7,8 @@ public class Pickupable : MonoBehaviour {
     public int scoreValue;
     gameController scoreControll;
     bool hasScored = false;
-    BoxCollider BottomCollider;
     
     void Start () {
-
-        BottomCollider = GetComponent<BoxCollider>();
 
 
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -58,9 +55,10 @@ public class Pickupable : MonoBehaviour {
         if (!hasScored) {
        
 
-              if (other.gameObject.tag == "Can") {
-                Debug.Log("!!");
-
+              if (other.gameObject.tag == "Can"|| other.gameObject.tag == "Coaster") {
+               
+                scoreControll.SpawnNewCan();
+              
                 scoreControll.AddScore(scoreValue);
                 hasScored = true;
                 
